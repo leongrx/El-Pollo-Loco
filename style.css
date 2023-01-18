@@ -1,0 +1,302 @@
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    margin: 0;
+    height: 100vh;
+    background: url("img/5_background/canvas_background.jpg");
+    overflow: hidden;
+}
+
+canvas {
+    display: block;
+    position: relative;
+}
+
+.d-none {
+    display: none;
+}
+
+/* ====== ICONS ON BOTTOM ====== */
+
+.keyboardContainer {
+    display: flex;
+}
+
+.keyboard {
+    position: relative;
+    margin: 0 17px;;
+}
+
+.keyboard:first-of-type {
+    margin-left: 0;
+}
+
+.keyboard:last-of-type {
+    margin-right: 0;
+}
+
+.keyboardFrame {
+    display: flex;
+    width: 92px;
+    height: 130px;
+}
+
+.keyLetter {
+    position: absolute;
+    top: 30px;
+    left: 21px;
+    width: 50px;
+    height: 50px;
+}
+
+.keyboardDescription {
+    position: absolute;
+    right: 0;
+    left: 0;
+    text-align: center;
+    bottom: 30px;
+}
+
+/* ====== STARTSCREEN ====== */
+
+.startscreen {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 720px;
+    height: 480px;
+    margin-bottom: 130px;
+}
+
+.gameover {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 720px;
+    height: 480px;
+    margin-bottom: 130px;
+}
+
+#startscreenImg {
+    width: 720px;
+    height: 480px;
+    object-fit: cover;
+    z-index: 1;
+}
+
+#gameoverImg {
+    width: 720px;
+    height: 480px;
+    object-fit: cover;
+    z-index: 2;
+}
+
+.gameover button {
+    position: absolute;
+    bottom: 30px;
+    object-fit: cover;
+    z-index: 2;
+    background-color: transparent;
+    border: 4px solid white;
+    border-radius: 40px;
+    padding: 2px 20px;
+    font-size: 50px;
+    color: white;
+}
+
+.gameover button:hover {
+    cursor: pointer;
+}
+
+#returnBtn {
+    transition: all 225ms ease-in-out;
+}
+
+#returnBtn:hover {
+    transform: scale(1.1);
+}
+
+.startscreen button:hover {
+    cursor: pointer;
+}
+
+#playBtn {
+    width: 92px;
+    height: 92px;
+    position: absolute;
+    z-index: 3;
+    background-color: transparent;
+    border: none;
+}
+
+#playBtn:hover {
+    background-color: white;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+/* ====== PRELOADER ====== */
+
+#preloader {
+    background: #f5f4e1 url(./gif/preloader.gif) no-repeat center center;
+    width: 720px;
+    height: 480px;
+    position: absolute;
+    margin-bottom: 130px;
+    z-index: 100;
+    opacity: 0;
+}
+
+/* ====== MOBILE-OPERATION ====== */
+
+.mobileKeyboardContainer {
+    width: 720px;
+    height: 480px;
+    display: none;
+    z-index: 1;
+}
+
+.mobileKeyboard {
+    margin: 0 15px;
+}
+
+.mobileOperation {
+    width: 34px;
+    height: 34px;
+}
+
+.leftMobileKeyboard {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+}
+
+.rightMobileKeyboard {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    right: 15%;
+}
+
+/* ====== CANVAS - RESPONSIVE ====== */
+
+@media only screen and (max-width: 720px) {
+
+    body {
+        background-color: black;
+    }
+
+    canvas {
+        position: absolute;
+        width: 100%;
+    }
+
+    .mobileKeyboardContainer {
+        display: flex;
+        width: 100%;
+    }    
+
+    .keyboardContainer{
+        display: none;
+    }
+    
+    #startscreenImg {
+        position: absolute;
+        width: 100%;
+        height: unset;
+        object-fit: cover;
+    }
+    
+    #preloader {
+        width: 100%;
+        margin-bottom: 0;
+    }
+    
+    .startscreen {
+        width: 100%;
+        margin-bottom: 0;
+    }
+    
+    .gameover {
+        width: 100%;
+        margin-bottom: 0;
+        object-fit: contain;
+        height: unset;
+    }
+    
+    #gameoverImg {
+        width: 100%;
+        height: unset;
+        object-fit: contain;
+    }
+
+    .gameover button {
+        font-size: 35px;
+        border: 2px solid white;
+        bottom: 5px;
+    }
+    
+}
+
+@media only screen and (max-width: 500px) {
+    #playBtn {
+        width: 65px;
+        height: 65px;
+    }
+}
+
+@media only screen and (max-height: 480px) {
+    
+    body {
+        height: 100vh;
+        background: url("");
+        background-color: black;
+    }
+    
+    canvas {
+        height: 100vh;
+    }
+    
+    .mobileKeyboardContainer {
+        display: flex;
+        height: 100vh;
+    }
+    
+    .keyboardContainer{
+        display: none;
+    }
+    
+    #startscreenImg {
+        height: 100vh;
+        object-fit: cover;
+    }
+    
+    #preloader {
+        height: 100vh;
+        margin-bottom: 0;
+    }
+    
+    .startscreen {
+        height: 100vh;
+        margin-bottom: 0;
+    }
+    
+    .gameover {
+        height: 100vh;
+        margin-bottom: 0;
+    }
+    
+    #gameoverImg {
+        height: 100vh;
+    }
+    
+}
+
+
+
